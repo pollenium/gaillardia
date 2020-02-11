@@ -23,9 +23,11 @@
     "ganache-cli": "^6.9.0",
     "pollenium-buttercup": "^19.1.0",
     "pollenium-ilex": "^9.2.0",
-    "pollenium-uvaursi": "^8.5.0"
+    "pollenium-uvaursi": "^8.5.0",
+    "web3": "^1.2.6"
   },
   "devDependencies": {
+    "bignumber.js": "^9.0.0",
     "tsc": "^1.20150623.0",
     "typescript": "^3.7.5"
   }
