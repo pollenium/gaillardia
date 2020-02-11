@@ -44,9 +44,11 @@ var ethers_1 = require("ethers");
 var pollenium_uvaursi_1 = require("pollenium-uvaursi");
 var pollenium_buttercup_1 = require("pollenium-buttercup");
 var web3_1 = __importDefault(require("web3"));
+var pollenium_weigela_1 = require("pollenium-weigela");
+var pollenium_ursinia_1 = require("pollenium-ursinia");
 exports.gaillardiaDefaults = {
-    gasLimit: 8000000,
-    gasPrice: 5000000000
+    gasLimit: 8 * pollenium_ursinia_1.MILLION,
+    gasPrice: new pollenium_buttercup_1.Uint256(5).opMul(pollenium_weigela_1.NumberOfWeiInOne.GWEI)
 };
 var Gaillardia = /** @class */ (function () {
     function Gaillardia(struct) {

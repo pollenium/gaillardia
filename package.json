@@ -23,7 +23,9 @@
     "ganache-cli": "^6.9.0",
     "pollenium-buttercup": "^19.1.0",
     "pollenium-ilex": "^9.2.0",
+    "pollenium-ursinia": "^1.0.0",
     "pollenium-uvaursi": "^8.5.0",
+    "pollenium-weigela": "^1.0.0",
     "web3": "^1.2.6"
   },
   "devDependencies": {
