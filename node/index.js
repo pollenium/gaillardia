@@ -48,7 +48,7 @@ var pollenium_weigela_1 = require("pollenium-weigela");
 var pollenium_ursinia_1 = require("pollenium-ursinia");
 exports.gaillardiaDefaults = {
     gasLimit: 8 * pollenium_ursinia_1.MILLION,
-    gasPrice: new pollenium_buttercup_1.Uint256(5).opMul(pollenium_weigela_1.NumberOfWeiInOne.GWEI)
+    gasPrice: pollenium_weigela_1.GWEI.opMul(5)
 };
 var Gaillardia = /** @class */ (function () {
     function Gaillardia(struct) {

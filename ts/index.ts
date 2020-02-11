@@ -4,7 +4,7 @@ import { Uish, Uu } from 'pollenium-uvaursi'
 import { Uintable, Uint256, Bytes32 } from 'pollenium-buttercup'
 import { Keypair } from 'pollenium-ilex'
 import Web3 from 'web3'
-import { NumberOfWeiInOne } from 'pollenium-weigela'
+import { GWEI } from 'pollenium-weigela'
 import { MILLION } from 'pollenium-ursinia'
 
 export interface AccountStruct {
@@ -20,7 +20,7 @@ export interface GaillardiaStruct {
 
 export const gaillardiaDefaults: Omit<GaillardiaStruct, 'accounts'> = {
   gasLimit: 8 * MILLION,
-  gasPrice: new Uint256(5).opMul(NumberOfWeiInOne.GWEI)
+  gasPrice: GWEI.opMul(5)
 }
 
 export class Gaillardia {
