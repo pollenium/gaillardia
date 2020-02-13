@@ -70,6 +70,9 @@ var Gaillardia = /** @class */ (function () {
         this.ethersWeb3Provider = new ethers_1.ethers.providers.Web3Provider(this.ganacheProvider, { name: 'ganache', chainId: 1 });
         this.web3 = new web3_1["default"](this.ganacheProvider);
     }
+    Gaillardia.prototype.genWallet = function (privateKey) {
+        return new ethers_1.ethers.Wallet(pollenium_uvaursi_1.Uu.wrap(privateKey).u, this.ethersWeb3Provider);
+    };
     Gaillardia.prototype.fetchLatestBlockNumber = function () {
         return this.ethersWeb3Provider.getBlockNumber();
     };

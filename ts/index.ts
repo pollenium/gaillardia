@@ -55,6 +55,13 @@ export class Gaillardia {
     this.web3 = new Web3(this.ganacheProvider)
   }
 
+  genWallet(privateKey: Uish): ethers.Wallet {
+    return new ethers.Wallet(
+      Uu.wrap(privateKey).u,
+      this.ethersWeb3Provider
+    )
+  }
+
   fetchLatestBlockNumber(): Promise<number> {
     return this.ethersWeb3Provider.getBlockNumber()
   }
