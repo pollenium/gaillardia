@@ -46,7 +46,7 @@ export class Gaillardia {
         const startBalance = new Uint256(account.startBalance)
         return {
           secretKey: new Buffer(privateKey.u),
-          balance: new Uint256(account.startBalance).toPhex(),
+          balance: new Uint256(account.startBalance).uu.toPhex(),
         }
       })
     })

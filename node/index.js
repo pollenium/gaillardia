@@ -63,7 +63,7 @@ var Gaillardia = /** @class */ (function () {
                 var startBalance = new pollenium_buttercup_1.Uint256(account.startBalance);
                 return {
                     secretKey: new Buffer(privateKey.u),
-                    balance: account.startBalance
+                    balance: new pollenium_buttercup_1.Uint256(account.startBalance).uu.toPhex()
                 };
             })
         });
