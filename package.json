@@ -21,6 +21,7 @@
     "@types/node": "^13.7.1",
     "ethers": "^4.0.44",
     "ganache-cli": "^6.9.0",
+    "pollenium-bellflower": "^4.0.0",
     "pollenium-buttercup": "^19.1.0",
     "pollenium-ilex": "^9.2.0",
     "pollenium-ursinia": "^1.0.0",
