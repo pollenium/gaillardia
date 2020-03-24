@@ -30,9 +30,9 @@ export class Gaillardia {
   readonly gasPrice: Uint256
 
   readonly ganacheProvider
-  readonly ethersWeb3Provider
+  readonly ethersWeb3Provider: ethers.providers.Web3Provider
   readonly web3
-  readonly bellflower
+  readonly bellflower: Bellflower
 
   constructor(readonly struct: GaillardiaStruct) {
 
