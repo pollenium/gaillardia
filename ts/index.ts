@@ -4,6 +4,7 @@ import { Uish, Uu } from 'pollenium-uvaursi'
 import { Uintable, Uint256, Bytes32 } from 'pollenium-buttercup'
 import { Keypair } from 'pollenium-ilex'
 import Web3 from 'web3'
+import { Bellflower } from 'pollenium-bellflower'
 import { GWEI } from 'pollenium-weigela'
 import { MILLION } from 'pollenium-ursinia'
 
@@ -31,6 +32,7 @@ export class Gaillardia {
   readonly ganacheProvider
   readonly ethersWeb3Provider
   readonly web3
+  readonly bellflower
 
   constructor(readonly struct: GaillardiaStruct) {
 
@@ -53,6 +55,7 @@ export class Gaillardia {
 
     this.ethersWeb3Provider = new ethers.providers.Web3Provider(this.ganacheProvider, { name: 'ganache', chainId: 1 })
     this.web3 = new Web3(this.ganacheProvider)
+    this.bellflower = new Bellflower(this.ethersWeb3Provider)
   }
 
   genWallet(privateKey: Uish): ethers.Wallet {
@@ -60,16 +63,6 @@ export class Gaillardia {
       Uu.wrap(privateKey).u,
       this.ethersWeb3Provider
     )
-  }
-
-  fetchLatestBlockNumber(): Promise<number> {
-    return this.ethersWeb3Provider.getBlockNumber()
-  }
-
-  async fetchLatestBlockHash(): Promise<Bytes32> {
-    const latestBlockNumber = await this.fetchLatestBlockNumber()
-    const ethersBlock: ethers.providers.Block = await this.ethersWeb3Provider.getBlock(latestBlockNumber)
-    return new Bytes32(Uu.fromHexish(ethersBlock.hash))
   }
 
   async takeSnapshot(): Promise<number> {

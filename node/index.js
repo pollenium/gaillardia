@@ -44,6 +44,7 @@ var ethers_1 = require("ethers");
 var pollenium_uvaursi_1 = require("pollenium-uvaursi");
 var pollenium_buttercup_1 = require("pollenium-buttercup");
 var web3_1 = __importDefault(require("web3"));
+var pollenium_bellflower_1 = require("pollenium-bellflower");
 var pollenium_weigela_1 = require("pollenium-weigela");
 var pollenium_ursinia_1 = require("pollenium-ursinia");
 exports.gaillardiaDefaults = {
@@ -69,28 +70,10 @@ var Gaillardia = /** @class */ (function () {
         });
         this.ethersWeb3Provider = new ethers_1.ethers.providers.Web3Provider(this.ganacheProvider, { name: 'ganache', chainId: 1 });
         this.web3 = new web3_1["default"](this.ganacheProvider);
+        this.bellflower = new pollenium_bellflower_1.Bellflower(this.ethersWeb3Provider);
     }
     Gaillardia.prototype.genWallet = function (privateKey) {
         return new ethers_1.ethers.Wallet(pollenium_uvaursi_1.Uu.wrap(privateKey).u, this.ethersWeb3Provider);
-    };
-    Gaillardia.prototype.fetchLatestBlockNumber = function () {
-        return this.ethersWeb3Provider.getBlockNumber();
-    };
-    Gaillardia.prototype.fetchLatestBlockHash = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var latestBlockNumber, ethersBlock;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.fetchLatestBlockNumber()];
-                    case 1:
-                        latestBlockNumber = _a.sent();
-                        return [4 /*yield*/, this.ethersWeb3Provider.getBlock(latestBlockNumber)];
-                    case 2:
-                        ethersBlock = _a.sent();
-                        return [2 /*return*/, new pollenium_buttercup_1.Bytes32(pollenium_uvaursi_1.Uu.fromHexish(ethersBlock.hash))];
-                }
-            });
-        });
     };
     Gaillardia.prototype.takeSnapshot = function () {
         return __awaiter(this, void 0, void 0, function () {

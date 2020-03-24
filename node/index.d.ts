@@ -1,6 +1,6 @@
 import { ethers } from 'ethers';
 import { Uish } from 'pollenium-uvaursi';
-import { Uintable, Uint256, Bytes32 } from 'pollenium-buttercup';
+import { Uintable, Uint256 } from 'pollenium-buttercup';
 export interface AccountStruct {
     privateKey: Uish;
     startBalance: Uintable;
@@ -18,10 +18,9 @@ export declare class Gaillardia {
     readonly ganacheProvider: any;
     readonly ethersWeb3Provider: any;
     readonly web3: any;
+    readonly bellflower: any;
     constructor(struct: GaillardiaStruct);
     genWallet(privateKey: Uish): ethers.Wallet;
-    fetchLatestBlockNumber(): Promise<number>;
-    fetchLatestBlockHash(): Promise<Bytes32>;
     takeSnapshot(): Promise<number>;
     restoreSnapshot(id: number): Promise<void>;
 }
