@@ -66,7 +66,8 @@ var Gaillardia = /** @class */ (function () {
                     secretKey: new Buffer(privateKey.u),
                     balance: new pollenium_buttercup_1.Uint256(account.startBalance).uu.toPhex()
                 };
-            })
+            }),
+            blockTime: struct.blockTimeSeconds ? struct.blockTimeSeconds : undefined
         });
         this.ethersWeb3Provider = new ethers_1.ethers.providers.Web3Provider(this.ganacheProvider, { name: 'ganache', chainId: 1 });
         this.web3 = new web3_1["default"](this.ganacheProvider);

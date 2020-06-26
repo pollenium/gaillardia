@@ -10,6 +10,7 @@ export interface GaillardiaStruct {
     gasLimit: Uintable;
     gasPrice: Uintable;
     accounts: Array<AccountStruct>;
+    blockTimeSeconds?: number;
 }
 export declare const gaillardiaDefaults: Omit<GaillardiaStruct, 'accounts'>;
 export declare class Gaillardia {

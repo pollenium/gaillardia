@@ -16,7 +16,8 @@ export interface AccountStruct {
 export interface GaillardiaStruct {
   gasLimit: Uintable,
   gasPrice: Uintable,
-  accounts: Array<AccountStruct>
+  accounts: Array<AccountStruct>,
+  blockTimeSeconds?: number,
 }
 
 export const gaillardiaDefaults: Omit<GaillardiaStruct, 'accounts'> = {
@@ -50,7 +51,8 @@ export class Gaillardia {
           secretKey: new Buffer(privateKey.u),
           balance: new Uint256(account.startBalance).uu.toPhex(),
         }
-      })
+      }),
+      blockTime: struct.blockTimeSeconds ? struct.blockTimeSeconds : undefined
     })
 
     this.ethersWeb3Provider = new ethers.providers.Web3Provider(this.ganacheProvider, { name: 'ganache', chainId: 1 })
