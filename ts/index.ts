@@ -104,4 +104,21 @@ export class Gaillardia {
       })
     })
   }
+
+  async increaseTime(seconds: number): Promise<void> {
+    return new Promise((resolve, reject) => {
+      this.web3.currentProvider.sendAsync({
+        method: "evm_increaseTime",
+        params: [seconds],
+        jsonrpc: "2.0",
+        id: new Date().getTime()
+      }, (error, res) => {
+        if (error) {
+          return reject(error)
+        } else {
+          resolve()
+        }
+      })
+    })
+  }
 }

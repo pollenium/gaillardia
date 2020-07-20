@@ -125,6 +125,28 @@ var Gaillardia = /** @class */ (function () {
             });
         });
     };
+    Gaillardia.prototype.increaseTime = function (seconds) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, new Promise(function (resolve, reject) {
+                        _this.web3.currentProvider.sendAsync({
+                            method: "evm_increaseTime",
+                            params: [seconds],
+                            jsonrpc: "2.0",
+                            id: new Date().getTime()
+                        }, function (error, res) {
+                            if (error) {
+                                return reject(error);
+                            }
+                            else {
+                                resolve();
+                            }
+                        });
+                    })];
+            });
+        });
+    };
     return Gaillardia;
 }());
 exports.Gaillardia = Gaillardia;

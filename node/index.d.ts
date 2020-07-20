@@ -25,4 +25,5 @@ export declare class Gaillardia {
     genWallet(privateKey: Uish): ethers.Wallet;
     takeSnapshot(): Promise<number>;
     restoreSnapshot(id: number): Promise<void>;
+    increaseTime(seconds: number): Promise<void>;
 }
