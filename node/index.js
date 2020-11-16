@@ -69,7 +69,7 @@ var Gaillardia = /** @class */ (function () {
             }),
             blockTime: struct.blockTimeSeconds ? struct.blockTimeSeconds : undefined
         });
-        this.ethersWeb3Provider = new ethers_1.ethers.providers.Web3Provider(this.ganacheProvider, { name: 'ganache', chainId: 1 });
+        this.ethersWeb3Provider = new ethers_1.ethers.providers.Web3Provider(this.ganacheProvider, { name: 'ganache', chainId: 1337 });
         this.web3 = new web3_1["default"](this.ganacheProvider);
         this.bellflower = new pollenium_bellflower_1.Bellflower(this.ethersWeb3Provider);
     }
