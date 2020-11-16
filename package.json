@@ -19,7 +19,7 @@
   "homepage": "https://github.com/pollenium/gaillardia#readme",
   "dependencies": {
     "@types/node": "^13.7.1",
-    "ethers": "^4.0.44",
+    "ethers": "^5.0.19",
     "ganache-cli": "^6.9.0",
     "pollenium-bellflower": "^4.0.1",
     "pollenium-buttercup": "^19.1.0",
